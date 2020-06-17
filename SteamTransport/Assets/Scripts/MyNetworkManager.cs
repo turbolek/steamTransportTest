@@ -19,9 +19,8 @@ public class MyNetworkManager : NetworkManager
 
     private int _currentPlayerIndex = 0;
 
-    public override void OnServerConnect(NetworkConnection conn)
+    public override void OnStartServer()
     {
-        base.OnServerConnect(conn);
         GameObject tamagtochiObject = Instantiate(_tamagotchiPrefab, _tamagotchiSpawnPoint.position, _tamagotchiSpawnPoint.rotation);
         NetworkServer.Spawn(tamagtochiObject);
     }
